@@ -72,8 +72,20 @@ docker push 5****ACCNO**1.dkr.ecr.eu-west-1.amazonaws.com/hello-world:latest
 
 
 ```
-#### Go on over to Amazon ECS and create a new task for fargate and call it hello-world(same name as container) and on add container(input the image link from the ECS) port:80
 
-#### create fargate cluster and go on task run new task
+##Task Definition and Containerdef
+
+#### Go on over to Amazon ECS and create a new task for fargate and call it hello-world and choose TaskexecutionRole(name name as container) and on add container(input the image URI link from the ECS) port:80
+
+
+##Running task on ECS Cluster
+#### create fargate cluster and go on task, run new task
 
 #### select myVPC and a security group which allows port 80
+
+#### Auto assign Ip enabled and then run Task
+
+#### copy public address...its running from ECS but the image was brought down from ECR
+
+
+https://www.dropbox.com/s/xsbv5slmyoh7i70/docker.jpg?dl=0
