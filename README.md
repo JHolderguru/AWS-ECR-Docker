@@ -7,6 +7,8 @@ sudo yum update -y
 
 sudo amazon-linux-extra install docker
 
+sudo service docker start
+
 sudo usermod -a -G docker ec2-user
 
 exit
@@ -36,12 +38,17 @@ RUN echo 'Hello World this is Jholderguru!'> /var/www/html/index.html
 RUN echo '. /etc/apache2/envvars' > /root/run_apache.sh && \
  echo 'mkdir -p /var/run/apache2' >> /root/run_apache.sh && \                                                                                                                                                      echo 'mkdir -p /var/lock/apache2' >> /root/run_apache.sh && \
  echo '/usr/sbin/apache2 -D FOREGROUND' >> /root/run_apache.sh && \
- chmod 755 /root/run/run_apache.sh
+ chmod 755 /root/run_apache.sh
 
 EXPOSE 80
 
 CMD /root/run_apache.sh
 
-```
+```powershell
+ docker build -t hello-world .
+
+ docker images --filter reference=hello-world
+
+ docker run -t -i -p 80:80 hello-world
 
 ```
