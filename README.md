@@ -13,3 +13,8 @@ exit
 ```
 
 #### ssh back into the machine
+
+```powershell
+docker --version
+
+```
