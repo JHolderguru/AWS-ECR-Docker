@@ -52,3 +52,28 @@ CMD /root/run_apache.sh
  docker run -t -i -p 80:80 hello-world
 
 ```
+#### copy the EC2 public ip address and that should be showing, but this has to run on our container not on the EC2.
+
+## go to Amazon ECS console and choose the repository (under amazon ECR make syres its tthe same name and it is a pvt repository)
+
+## create repository
+
+## view push commands
+
+```python
+
+aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 5****ACCNO**1.dkr.ecr.eu-west-1.amazonaws.com
+
+docker tag hello-world:latest 5****ACCNO**1.dkr.ecr.eu-west-1.amazonaws.com/hello-world:latest
+
+docker push 5****ACCNO**1.dkr.ecr.eu-west-1.amazonaws.com/hello-world:latest
+
+
+
+
+```
+#### Go on over to Amazon ECS and create a new task for fargate and call it hello-world(same name as container) and on add container(input the image link from the ECS) port:80
+
+#### create fargate cluster and go on task run new task
+
+#### select myVPC and a security group which allows port 80
